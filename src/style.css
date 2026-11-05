@@ -1,0 +1,90 @@
+/* Estilos base neutros */
+:root {
+  --fondo-1: #2a2a2a;
+  --fondo-2: #111111;
+  --texto: #f2f2f2;
+  --acento: #bdbdbd;
+
+  --sans: system-ui, "Segoe UI", Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  overflow: hidden;
+  color: var(--texto);
+  font-family: var(--sans);
+  /* El fondo lo pone CSS; el canvas es transparente encima */
+  background: radial-gradient(circle at 68% 45%, var(--fondo-1), var(--fondo-2) 70%);
+}
+
+/* Canvas: ocupa la ventana, detrás del texto */
+#lienzo {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Texto en HTML ---------------------------------------------------------- */
+#copy {
+  position: fixed;
+  left: 7vw;
+  top: 50%;
+  translate: 0 -50%;
+  max-width: 36ch;
+  pointer-events: none;   /* que el mouse pase al documento */
+}
+
+.kicker {
+  margin: 0 0 1rem;
+  font: 500 12px/1 var(--mono);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--acento);
+}
+
+.titulo {
+  margin: 0;
+  font-size: clamp(2.5rem, 7vw, 6rem);
+  font-weight: 800;
+  line-height: .95;
+  letter-spacing: -0.02em;
+}
+
+.bajada {
+  margin: 1.4rem 0 0;
+  line-height: 1.5;
+  opacity: .8;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cta {
+  display: block;
+  font: 400 13px/1 var(--mono);
+  color: var(--acento);
+  opacity: 0.75;
+}
+
+/* Lectura de datos ------------------------------------------------------ */
+#hud {
+  position: fixed;
+  left: 7vw;
+  bottom: 28px;
+  display: flex;
+  gap: 24px;
+  font: 400 12px/1 var(--mono);
+  opacity: .55;
+  font-variant-numeric: tabular-nums;
+
+  b { font-weight: 500; }
+}
+
+@media (max-width: 800px) {
+  #copy { top: auto; bottom: 64px; translate: none; }
+}

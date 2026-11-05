@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>02-Thomas Bangalter (Daft Punk)</title>
+  </head>
+  <body>
+    <!-- La escena 3D va detrás, con fondo transparente. El texto es HTML normal encima. -->
+    <canvas id="lienzo"></canvas>
+
+    <header id="copy">
+      <p class="kicker">Objeto 02 · Daft Punk</p>
+      <h1 class="titulo">Thomas Bangalter.</h1>
+      <p class="bajada">
+        DJ, actor, músico y productor francés, conocido por ser miembro de Daft Punk.
+        <span class="cta">Interactúa para explorar el visor.</span>
+      </p>
+    </header>
+
+    <aside id="hud">
+      <span>norm x <b id="norm-x">0.00</b> · y <b id="norm-y">0.00</b></span>
+      <span>rot x <b id="rotation-x">0</b>° · y <b id="rotation-y">0</b>°</span>
+    </aside>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
